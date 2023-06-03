@@ -481,8 +481,8 @@ document.querySelector('.side')
           
           function ftuser() {
               Swal.fire({
-                  title: 'Toquilla Hotel',
-                  text: 'Alojamiento Pedernales Cojimies',
+                  title: 'Pedernales Cojimies',
+                  text: 'Alojamiento con Vista al Mar',
                   imageUrl: 'img/toquillalogo.png',
                   imageWidth: 200,
                   confirmButtonText: 'Añadir a Contactos',
