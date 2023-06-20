@@ -7,7 +7,7 @@
 }
 
 body {
-	background: url('./img/fondobody.png');
+	background: url('../img/fondobody.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family:'Open Sans',Sans-serif, Arial, Helvetica;
@@ -766,7 +766,7 @@ footer .rango {
 @media screen  and  (min-width: 800px){
 	body { 
 	
-		background:linear-gradient(rgba(255, 255, 255, 0.447), rgba(0, 0, 0, 0.173)), url('/img/bg.png') no-repeat
+		background:linear-gradient(rgba(255, 255, 255, 0.447), rgba(0, 0, 0, 0.173)), url('../img/bg.png') no-repeat
 
 	}
 }
