@@ -7,7 +7,7 @@
 }
 
 body {
-	background: url('../img/fondobody.png');
+	background: url('./img/fondobody.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family:'Open Sans',Sans-serif, Arial, Helvetica;
