@@ -44,7 +44,6 @@ function backweb() {
     else if(contador==2){
         document.getElementById("portafolio").style.display = "block";
         document.getElementById("habitacion").style.display = "none";
-        document.getElementById("Restaurante").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("Piscina").style.display = "none";
         contador=1;
@@ -66,7 +65,6 @@ function inicio() {
     document.getElementById("habitacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("sharelink").style.display = "none";
     document.getElementById("Piscina").style.display = "none";
     conta=0;
@@ -104,7 +102,6 @@ function habitacion() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("sharelink").style.display = "none";
     document.getElementById("Piscina").style.display = "none";
     conta=0;
@@ -121,7 +118,6 @@ function restaurante() {
     document.getElementById("informacion").style.display = "none";
     document.getElementById("habitacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("sharelink").style.display = "none";
     document.getElementById("Piscina").style.display = "none";
     conta=0;
@@ -139,7 +135,6 @@ function planes() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("habitacion").style.display = "none";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("Piscina").style.display = "none";
     conta=0;
     contador=2; 
@@ -149,25 +144,9 @@ function planes() {
 }
 
 
-function Restaurante() {
-    document.getElementById("Restaurante").style.display = "block";
-    document.getElementById("screen4").style.display = "none";
-    document.getElementById("portafolio").style.display = "none";
-    document.getElementById("side").style.display = "none";
-    document.getElementById("informacion").style.display = "none";
-    document.getElementById("habitacion").style.display = "none";
-    document.getElementById("sharelink").style.display = "none";
-    document.getElementById("Piscina").style.display = "none";
-    conta=0;
-    contador=2; 
-    ids2();
-    backarriba();  
-        
-}
 
 function Piscina() {
     document.getElementById("Piscina").style.display = "block";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
@@ -188,7 +167,6 @@ function sharetj() {
     document.getElementById("side").style.display = "none";
     document.getElementById("habitacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
-    document.getElementById("Restaurante").style.display = "none";
     document.getElementById("Piscina").style.display = "none";
     conta=0;
     contador=1;
@@ -223,7 +201,6 @@ function back() {
     else if(contador==2){
         document.getElementById("portafolio").style.display = "block";
         document.getElementById("habitacion").style.display = "none";
-        document.getElementById("Restaurante").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("Piscina").style.display = "none";
         contador=1;
@@ -270,52 +247,6 @@ function back() {
                conta=0;
                });
    
-    // slider3
-    
-    const slider3 = document.querySelector("#slider3");
-    let sliderSection3 = document.querySelectorAll(".slider__section3");
-    let sliderSectionlast3 = sliderSection3[sliderSection3.length -1];
-    
-    const btnLeft3 = document.querySelector("#btn-left3");
-    const btnRight3 = document.querySelector("#btn-rigth3");
-    
-    slider3.insertAdjacentElement('afterbegin', sliderSectionlast3);
-    
-    function next3 (){
-        let sliderSectionFirst3 = document.querySelectorAll(".slider__section3")[0];
-        slider3.style.marginLeft = "-200%";
-        slider3.style.transition = "all 0.5s";
-        setTimeout(function(){
-            slider3.style.transition = "none";
-            slider3.insertAdjacentElement('beforeend', sliderSectionFirst3);
-            slider3.style.marginLeft = "-100%";
-        }, 500);  
-    }
-    
-    function Prev3 (){
-        let sliderSection3 = document.querySelectorAll(".slider__section3");
-        let sliderSectionLast3 = sliderSection3[sliderSection3.length -1];
-        slider3.style.marginLeft = "0";
-        slider3.style.transition = "all 0.5s";
-        setTimeout(function(){
-            slider3.style.transition = "none";
-            slider3.insertAdjacentElement('afterbegin', sliderSectionLast3);
-            slider3.style.marginLeft = "-100%";
-        }, 500);  
-    }
-    
-    btnRight3.addEventListener('click', function(){
-        next3();
-    });
-    
-    btnLeft3.addEventListener('click', function(){
-        Prev3();
-    });
-    
-    setInterval(function(){
-        next3();
-    },5000);  
-
 
    //    menu laterl 
 
@@ -552,6 +483,20 @@ document.querySelector('.side')
             title: 'Tarjeta Digital',
             text: 'Link Copiado a Portapapeles',
             footer: 'CliconlineStudios'
+            });
+          
+           
+          };
+
+
+          function msj3() {
+            sidebar();
+            Swal.fire({
+            showCloseButton: true,
+            icon: 'success',
+            title: 'Pets friendly',
+            text: 'Se permite el ingreso de mascotas Perros y Gatos domesticados a Toquilla Hotel',
+            footer: 'Aplica Condiciones'
             });
           
            
