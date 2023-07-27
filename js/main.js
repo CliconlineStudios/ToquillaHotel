@@ -366,7 +366,7 @@ document.querySelector('.side')
             e.preventDefault();
           
             //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-            let telefono = "573996079530";
+            let telefono = "593996079530";
           
             let cliente = document.querySelector("#cliente").value;
             let edad = document.querySelector("#edad").value;
