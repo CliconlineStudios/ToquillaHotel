@@ -826,7 +826,6 @@ footer .rango {
 	text-align: center;
 	display: none;
 }
-
   .formulario {
 	max-width: 100%;
 	padding: 20px;
@@ -901,7 +900,40 @@ footer .rango {
 	margin-right: auto;
   }
   
+  .screen4 .reserok{
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ff0000;
+}
 
+.screen4 .btenviarR{
+	background: linear-gradient(102deg, #0099ff 40%, #0099ffd2 60%);
+	color: #fffffff1;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px 5px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #020000c4;
+	margin: 0px 50px;
+	display: block;
+	font-weight: bolder;
+}
+
+.screen4 .btenviarR:hover{
+	background: linear-gradient(102deg, #15ff00 40%, rgba(68, 189, 38, 0.824) 60%);
+	color: #fffffff1;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px 5px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #020000c4;
+	margin: 0px 50px;
+	display: block;
+	font-weight: bolder;
+}
   /* respuesta del formulario */
   #respuesta {
 	width: 100%;
@@ -919,6 +951,8 @@ footer .rango {
 	text-decoration: none;
 	color: #000000;
 }
+
+
 
 /* screen share */
 

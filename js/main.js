@@ -174,14 +174,6 @@ function sharetj() {
        
 }
 
-//   boton foto
-
-document.querySelector('.slider')   
-.addEventListener('click',function(){
-    planes();
-    
-
-});
 
 //   boton atras
 
@@ -212,10 +204,8 @@ function back() {
             history.back();
         
     }
-
-    } 
-
-
+}
+    
        //    menu laterl 
 
        var btns = document.getElementById("inicio"),
@@ -247,162 +237,52 @@ function back() {
                conta=0;
                });
    
+   
 
-   //    menu laterl 
-
-    var btns = document.getElementById("inicio"),
-    informacion = document.getElementById("infomacion"),
-    conta=0;
-
-    function sidebar()  {
-
-        if (conta==0) {
-            document.getElementById("side").style.display = "block";
-            conta=1;
-        }
-        else{
-            document.getElementById("side").style.display = "none";
-            conta=0;
-        }
-        }
-
-        function cerrarside() {
-            document.getElementById("side").style.display = "none";
-            conta=0;
-            
-        }
-
-  // slider
- 
-  const slider = document.querySelector("#slider");
-  let sliderSection = document.querySelectorAll(".slider__section");
-  let sliderSectionlast = sliderSection[sliderSection.length -1];
-  
-  const btnLeft = document.querySelector("#btn-left");
-  const btnRight = document.querySelector("#btn-rigth");
-  
-  slider.insertAdjacentElement('afterbegin', sliderSectionlast);
-  
-  function next (){
-      let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
-      slider.style.marginLeft = "-200%";
-      slider.style.transition = "all 0.5s";
-      setTimeout(function(){
-          slider.style.transition = "none";
-          slider.insertAdjacentElement('beforeend', sliderSectionFirst);
-          slider.style.marginLeft = "-100%";
-      }, 500);  
-  }
-  
-  function Prev (){
-      let sliderSection = document.querySelectorAll(".slider__section");
-      let sliderSectionLast = sliderSection[sliderSection.length -1];
-      slider.style.marginLeft = "0";
-      slider.style.transition = "all 0.5s";
-      setTimeout(function(){
-          slider.style.transition = "none";
-          slider.insertAdjacentElement('afterbegin', sliderSectionLast);
-          slider.style.marginLeft = "-100%";
-      }, 500);  
-  }
-  
-  btnRight.addEventListener('click', function(){
-      next();
-  });
-  
-  btnLeft.addEventListener('click', function(){
-      Prev();
-  });
-  
-  setInterval(function(){
-      next();
-  },5000);   
   
 
-// llevar arriba
     
-document.querySelector('.side')   
-.addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
-});
+function enviaR() {
+ //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
+ let telefono = "593996079530";
+          
+ let cliente = document.querySelector("#cliente").value;
+ let edad = document.querySelector("#edad").value;
+ let fecha = document.querySelector("#fecha").value;
+ let hora = document.querySelector("#hora").value;
+ let modulos = document.querySelector("#modulos").value;
+ let resp = document.querySelector("#respuesta");
 
-        document.querySelector('.side1')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
+ resp.classList.remove("fail");
+ resp.classList.remove("send");
 
-        document.querySelector('.side2')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
+ let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
+       *Toquilla Hotel*%0A
+       *Datos de la Reserva*%0A
+       *Nombre*%0A
+       ${cliente}%0A
+       *Cantidad*%0A
+       ${edad}%0A
+       *Fecha de Reserva*%0A
+       ${fecha}%0A
+       *Hora de Entrada*%0A
+       ${hora}%0A
+       *Alojamiento*%0A
+       ${modulos}%0A
+       *Nota: Realiza el Pago del 50% y Asegura tu Reserva*%0A`;
 
-        document.querySelector('.side3')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
+ if (cliente === "" || edad === "" || fecha === "" || hora === "") {
+   resp.classList.add("fail");
+   resp.innerHTML = `Espera, ${cliente} faltan algunos Datos `;
+   return false;
+ }
+ resp.classList.remove("fail");
+ resp.classList.add("send");
+ resp.innerHTML = `Tu Reserva Fue Enviada, ${cliente}`;
 
-        document.querySelector('.back')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
-        
-//formulario>
-        document.querySelector("#submit").addEventListener("click", e => {
-            e.preventDefault();
-          
-            //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-            let telefono = "593996079530";
-          
-            let cliente = document.querySelector("#cliente").value;
-            let edad = document.querySelector("#edad").value;
-            let fecha = document.querySelector("#fecha").value;
-            let hora = document.querySelector("#hora").value;
-            let modulos = document.querySelector("#modulos").value;
-            let resp = document.querySelector("#respuesta");
-          
-            resp.classList.remove("fail");
-            resp.classList.remove("send");
-          
-            let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
-                  *Toquilla Hotel*%0A
-                  *Datos de la Reserva*%0A
-                  *Nombre*%0A
-                  ${cliente}%0A
-                  *Cantidad*%0A
-                  ${edad}%0A
-                  *Fecha de Reserva*%0A
-                  ${fecha}%0A
-                  *Hora de Entrada*%0A
-                  ${hora}%0A
-                  *Alojamiento*%0A
-                  ${modulos}%0A`;
-          
-            if (cliente === "" || edad === "" || fecha === "" || hora === "") {
-              resp.classList.add("fail");
-              resp.innerHTML = `Espera, ${cliente} faltan algunos Datos `;
-              return false;
-            }
-            resp.classList.remove("fail");
-            resp.classList.add("send");
-            resp.innerHTML = `Tu Reserva Fue Enviada, ${cliente}`;
-          
-            window.open(url);
-          });
+ window.open(url);
+}  
+       
           
           //ALERTAS>
           function save(){
